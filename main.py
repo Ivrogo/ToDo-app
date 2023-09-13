@@ -1,7 +1,11 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
-from task_functionality import add_task_button_click, remove_task_button_click
+from task_functionality import (
+    add_task_button_click,
+    remove_task_button_click,
+    load_task_from_file,
+)
 
 
 # Creation of the Window
@@ -26,6 +30,9 @@ todo_label_style.configure("TLabel", font=("Arial Bold", 35))
 # ListBox
 task_box_list = Listbox(app, width=80, height=20)
 task_box_list.pack()
+
+# Load the tasks from the file
+load_task_from_file(task_box_list)
 
 # Buttons
 add_button = ttk.Button(
